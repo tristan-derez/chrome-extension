@@ -18,7 +18,7 @@ if (leadsFromLocalStorage) {
 // on click event listener for save input button
 // push value from user
 // render the value
-inputBtn.addEventListener("click", function () {
+inputBtn.addEventListener("click", () => {
   myLeads.push(inputEl.value);
   inputEl.value = "";
   renderLeads();
@@ -27,7 +27,7 @@ inputBtn.addEventListener("click", function () {
 // on double click event listener
 // reset localStorage, myLeads
 // render leads (Nothing)
-deleteBtn.addEventListener("dblclick", function () {
+deleteBtn.addEventListener("dblclick", () => {
   localStorage.clear;
   myLeads = [];
   renderLeads();
