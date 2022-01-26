@@ -15,6 +15,21 @@ if (leadsFromLocalStorage) {
   renderLeads();
 }
 
+// render the value from user
+const renderLeads = () => {
+  let listItems = "";
+  for (let i = 0; i < myLeads.length; i++) {
+    listItems += `
+            <li>
+                <a target='_blank' href='${myLeads[i]}'>
+                    ${myLeads[i]}
+                </a>
+            </li>
+        `;
+  }
+  ulEl.innerHTML = listItems;
+};
+
 // on click event listener for save input button
 // push value from user
 // render the value
@@ -32,18 +47,3 @@ deleteBtn.addEventListener("dblclick", () => {
   myLeads = [];
   renderLeads();
 });
-
-// render the value from user
-const renderLeads = () => {
-  let listItems = "";
-  for (let i = 0; i < myLeads.length; i++) {
-    listItems += `
-            <li>
-                <a target='_blank' href='${myLeads[i]}'>
-                    ${myLeads[i]}
-                </a>
-            </li>
-        `;
-  }
-  ulEl.innerHTML = listItems;
-};
