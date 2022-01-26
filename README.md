@@ -56,7 +56,7 @@ To get a local copy up and running follow these simple example steps.
    ```sh
    git clone https://github.com/dreyzu/chrome-extension.git
    ```
-2. Go on chrome://extensions 
+2. Go on [chrome://extensions](chrome://extensions)
 3. Click on unloaded package
 4. Select the file you cloned previously
 
