@@ -28,7 +28,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-Save links to locale storage to use them later on
+Save custom links and current tab on chrome to locale storage to use them later on
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
