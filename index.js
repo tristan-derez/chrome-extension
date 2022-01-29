@@ -1,4 +1,5 @@
 let myLeads = [];
+let oldLeads = [];
 
 const inputEl = document.querySelector("#input-el");
 const inputBtn = document.querySelector("#input-btn");
@@ -12,17 +13,17 @@ const leadsFromLocalStorage = JSON.parse(localStorage.getItem("myLeads"));
 // then call renderLeads()
 if (leadsFromLocalStorage) {
   myLeads = leadsFromLocalStorage;
-  renderLeads();
+  render(myLeads);
 }
 
 // render the value from user
-const renderLeads = () => {
+const render = (leads) => {
   let listItems = "";
   for (let i = 0; i < myLeads.length; i++) {
     listItems += `
             <li>
-                <a target='_blank' href='${myLeads[i]}'>
-                    ${myLeads[i]}
+                <a target='_blank' href='${leads[i]}'>
+                    ${leads[i]}
                 </a>
             </li>
         `;
@@ -36,7 +37,7 @@ const renderLeads = () => {
 inputBtn.addEventListener("click", () => {
   myLeads.push(inputEl.value);
   inputEl.value = "";
-  renderLeads();
+  render(myLeads);
 });
 
 // on double click event listener
@@ -45,5 +46,5 @@ inputBtn.addEventListener("click", () => {
 deleteBtn.addEventListener("dblclick", () => {
   localStorage.clear;
   myLeads = [];
-  renderLeads();
+  render(myLeads);
 });
