@@ -36,6 +36,7 @@ function render(leads) {
 // render the value
 inputBtn.addEventListener("click", () => {
   myLeads.push(inputEl.value);
+  localStorage.setItem("myLeads", JSON.stringify(myLeads));
   inputEl.value = "";
   render(myLeads);
 });
