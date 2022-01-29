@@ -1,10 +1,10 @@
 let myLeads = [];
-let oldLeads = [];
 
 const inputEl = document.querySelector("#input-el");
 const inputBtn = document.querySelector("#input-btn");
 const ulEl = document.querySelector("#ul-el");
 const deleteBtn = document.querySelector("#delete-btn");
+const tabBtn = document.querySelector("#tab-btn");
 
 // transform "myLeads" to an actual array and stores it in this
 const leadsFromLocalStorage = JSON.parse(localStorage.getItem("myLeads"));
@@ -38,6 +38,10 @@ inputBtn.addEventListener("click", () => {
   myLeads.push(inputEl.value);
   inputEl.value = "";
   render(myLeads);
+});
+
+tabBtn.addEventListener("click", () => {
+  console.log(tabs.url);
 });
 
 // on double click event listener
