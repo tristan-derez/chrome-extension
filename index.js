@@ -17,7 +17,7 @@ if (leadsFromLocalStorage) {
 }
 
 // render the value from user
-const render = (leads) => {
+function render(leads) {
   let listItems = "";
   for (let i = 0; i < leads.length; i++) {
     listItems += `
@@ -29,7 +29,7 @@ const render = (leads) => {
         `;
   }
   ulEl.innerHTML = listItems;
-};
+}
 
 // on click event listener for save input button
 // push value from user
@@ -40,8 +40,13 @@ inputBtn.addEventListener("click", () => {
   render(myLeads);
 });
 
-tabBtn.addEventListener("click", () => {
-  console.log(tabs.url);
+// on click event listen for save tab button
+tabBtn.addEventListener("click", function () {
+  chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+    myLeads.push();
+    localStorage.setItem("myLeads", JSON.stringify(myLeads));
+    render(myLeads);
+  });
 });
 
 // on double click event listener
