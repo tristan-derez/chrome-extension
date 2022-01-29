@@ -43,7 +43,7 @@ inputBtn.addEventListener("click", () => {
 // on click event listen for save tab button
 tabBtn.addEventListener("click", function () {
   chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-    myLeads.push();
+    myLeads.push(tabs[0].url);
     localStorage.setItem("myLeads", JSON.stringify(myLeads));
     render(myLeads);
   });
